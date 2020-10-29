@@ -1,0 +1,198 @@
+@import "variables";
+@import "mixins";
+
+@include mQ(576px) {}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: $fontSize;
+    font-family: $bodyFont;
+    text-align: center;
+    height: 100vh;
+    max-height: 100vh;
+
+}
+
+//reset
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 400;
+}
+
+.input-tracker {
+    height: 50vh;
+    background-image: url('../images/pattern-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mQ(576px) {
+        height: 35vh;
+    }
+
+    h2 {
+        color: white;
+        letter-spacing: 0.2px;
+        font-size: 1.3em;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    height: 45px;
+
+    @include mQ(576px) {
+        width: 33.33333%;
+
+    }
+
+    input {
+        width: 85%;
+        border: none;
+        outline: none;
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+        padding-left: 1.5em;
+    }
+
+    button {
+        width: 15%;
+        border: none;
+        outline: none;
+        background: black;
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+        padding: 1em;
+    }
+
+    img {
+        width: 11px;
+        height: 14px;
+    }
+}
+
+.output {
+    position: relative;
+    z-index: 99;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    top: -22.5vh;
+    text-align: center;
+    border-radius: 0.75rem;
+    background-color: white;
+
+    box-shadow: 0 0 1rem rgba($veryDarkGray, 0.2);
+
+    @include mQ(576px) {
+        width: 80%;
+        height: 75px;
+        top: -10vh;
+
+
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 0;
+        grid-row-gap: 20px;
+
+        @include mQ(576px) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            padding: 7.5px 0;
+        }
+
+    }
+
+
+    h4 {
+        font-size: 0.55em;
+        color: $darkGray;
+        letter-spacing: 1.35px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-weight: 500;
+        margin-top: 5px;
+        font-size: 1.1em;
+
+
+    }
+
+    .ip,
+    .location,
+    .timezone,
+    .isp {
+        @include mQ(576px) {
+            height: 60px;
+        }
+    }
+
+    .ip,
+    .location,
+    .timezone {
+        @include mQ(576px) {
+            border-right: 1px solid $darkGray;
+        }
+    }
+}
+
+#map {
+    position: absolute;
+    top: 50vh;
+    height: 50vh;
+    width: 100%;
+    z-index: -1;
+
+    @include mQ(576px) {
+        top: 35vh;
+        height: 65vh;
+
+    }
+}
